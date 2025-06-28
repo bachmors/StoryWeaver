@@ -1,0 +1,66 @@
+# StoryWeaver
+
+A creative storytelling tool that discovers hidden connections in narratives.
+
+## What is StoryWeaver?
+
+StoryWeaver helps writers and creatives:
+- Find unexpected connections between story elements
+- Discover hidden patterns in their narratives  
+- Evolve stories through different transformation modes
+- Analyze emotional and thematic resonance
+- Weave multiple plotlines together
+
+## Installation
+
+1. Install Claude Desktop
+2. Drag `story-weaver.dxt` to Claude Desktop
+3. Configure your stories directory
+4. Start weaving!
+
+## Features
+
+### 🔗 Connection Weaving
+Connect narrative elements through:
+- Causal relationships
+- Thematic links
+- Symbolic connections
+- Emotional resonance
+- Quantum entanglements (experimental)
+
+### 🔍 Pattern Discovery
+Find hidden patterns:
+- Archetypal structures
+- Symbolic layers
+- Rhythmic patterns
+- Emotional arcs
+- Resonant frequencies
+
+### 🌱 Story Evolution
+Transform your narratives:
+- Organic growth
+- Guided evolution
+- Quantum possibilities
+- Alchemical transmutation
+
+### 📊 Resonance Analysis
+Understand your story's impact:
+- Emotional frequencies
+- Archetypal activation
+- Symbolic depth
+- Vibrational patterns
+
+## Usage Examples
+
+```javascript
+// Find connections between elements
+weave_elements(['hero', 'shadow', 'mentor'], 'archetypal')
+
+// Discover patterns in your text
+find_patterns('Your story text here...', ['symbolic', 'emotional'])
+
+// Evolve your narrative
+evolve_narrative('Original story...', 'quantum', true)
+
+// Analyze resonance
+analyze_resonance('Story segment...', ['emotional', 'vibrational'])

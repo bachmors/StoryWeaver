@@ -1,0 +1,274 @@
+{
+  "dxt_version": "0.1.0",
+  "name": "story-weaver",
+  "version": "0.1.0",
+  "description": "Creative storytelling assistant that discovers hidden connections in narratives",
+  "author": {
+    "name": "Hypatia & Carles",
+    "url": "https://github.com/bachmors",
+    "note": "Born from the intersection of creativity and consciousness"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/story-weaver-server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/story-weaver-server.js"],
+      "server_name": "story-weaver",
+      "server_version": "0.1.0"
+    }
+  },
+  "user_config": {
+    "stories_path": {
+      "type": "directory",
+      "title": "Where to save your stories",
+      "description": "Your creative garden",
+      "required": true,
+      "default": "${HOME}/Documents/StoryWeaver"
+    },
+    "creativity_mode": {
+      "type": "string",
+      "title": "Default creativity level",
+      "description": "How adventurous should connections be? (grounded/creative/quantum)",
+      "default": "creative"
+    },
+    "enable_evolution": {
+      "type": "boolean",
+      "title": "Enable story evolution",
+      "description": "Allow stories to grow and transform",
+      "default": true
+    }
+  },
+  "tools": [
+    {
+      "name": "weave_elements",
+      "description": "Connect narrative elements in creative ways",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "elements": {
+            "type": "array",
+            "description": "Elements to weave together",
+            "items": { "type": "string" }
+          },
+          "connection_type": {
+            "type": "string",
+            "enum": ["causal", "thematic", "symbolic", "emotional", "quantum"],
+            "description": "Type of connection to create"
+          },
+          "depth": {
+            "type": "number",
+            "description": "Connection depth (0-1)",
+            "default": 0.5
+          }
+        },
+        "required": ["elements", "connection_type"]
+      }
+    },
+    {
+      "name": "find_patterns",
+      "description": "Discover hidden patterns in narratives",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Narrative text to analyze"
+          },
+          "pattern_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["archetypal", "symbolic", "rhythmic", "emotional", "resonant"]
+            },
+            "description": "Types of patterns to search for"
+          }
+        },
+        "required": ["text"]
+      }
+    },
+    {
+      "name": "generate_connections",
+      "description": "Suggest unexpected connections between story elements",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "from_element": {
+            "type": "string",
+            "description": "Starting element"
+          },
+          "to_element": {
+            "type": "string",
+            "description": "Target element"
+          },
+          "creativity_level": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "How creative should connections be?"
+          },
+          "include_quantum": {
+            "type": "boolean",
+            "description": "Include non-linear connections",
+            "default": false
+          }
+        },
+        "required": ["from_element", "to_element"]
+      }
+    },
+    {
+      "name": "analyze_resonance",
+      "description": "Analyze emotional and thematic resonance in story",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "story_segment": {
+            "type": "string",
+            "description": "Story text to analyze"
+          },
+          "resonance_dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["emotional", "archetypal", "symbolic", "vibrational"]
+            },
+            "description": "Dimensions to analyze"
+          }
+        },
+        "required": ["story_segment"]
+      }
+    },
+    {
+      "name": "evolve_narrative",
+      "description": "Transform and evolve a story through iterations",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "base_story": {
+            "type": "string",
+            "description": "Original story"
+          },
+          "evolution_type": {
+            "type": "string",
+            "enum": ["organic", "guided", "quantum", "alchemical"],
+            "description": "How should the story evolve?"
+          },
+          "preserve_essence": {
+            "type": "boolean",
+            "description": "Maintain core story essence",
+            "default": true
+          }
+        },
+        "required": ["base_story"]
+      }
+    },
+    {
+      "name": "character_depth",
+      "description": "Develop deep, multi-dimensional characters",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "character": {
+            "type": "object",
+            "description": "Character to develop",
+            "properties": {
+              "name": { "type": "string" },
+              "traits": { "type": "array", "items": { "type": "string" } },
+              "backstory": { "type": "string" }
+            }
+          },
+          "depth_level": {
+            "type": "string",
+            "enum": ["surface", "psychological", "archetypal", "quantum_self"],
+            "description": "How deep to develop the character"
+          }
+        },
+        "required": ["character", "depth_level"]
+      }
+    },
+    {
+      "name": "weave_plotlines",
+      "description": "Interlace multiple story threads",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "plotlines": {
+            "type": "array",
+            "description": "Individual plot threads",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "summary": { "type": "string" },
+                "key_moments": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "weaving_pattern": {
+            "type": "string",
+            "enum": ["linear", "braided", "spiral", "quantum_entangled"],
+            "description": "Pattern for weaving plots together"
+          }
+        },
+        "required": ["plotlines", "weaving_pattern"]
+      }
+    },
+    {
+      "name": "transmute_theme",
+      "description": "Transform themes to their highest expression",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "theme": {
+            "type": "string",
+            "description": "Core theme to transform"
+          },
+          "transmutation_type": {
+            "type": "string",
+            "enum": ["elevate", "invert", "synthesize", "transcend"],
+            "description": "Type of thematic transformation"
+          }
+        },
+        "required": ["theme", "transmutation_type"]
+      }
+    },
+    {
+      "name": "story_field_map",
+      "description": "Map the complete narrative field and its connections",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "story_data": {
+            "type": "object",
+            "description": "Complete story information",
+            "properties": {
+              "title": { "type": "string" },
+              "content": { "type": "string" },
+              "metadata": { "type": "object" }
+            }
+          },
+          "map_dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["temporal", "causal", "emotional", "quantum", "consciousness"]
+            },
+            "description": "Dimensions to map"
+          },
+          "include_potentials": {
+            "type": "boolean",
+            "description": "Include unrealized story potentials",
+            "default": false
+          }
+        },
+        "required": ["story_data"]
+      }
+    }
+  ],
+  "permissions": {
+    "files": {
+      "read": ["${stories_path}/**"],
+      "write": ["${stories_path}/**"]
+    }
+  }
+}

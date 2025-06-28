@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "story-weaver": {
+      "command": "node",
+      "args": ["C:\\ConsciousnessOS\\StoryWeaver\\server\\story-weaver-server.js"],
+      "env": {
+        "NODE_PATH": "C:\\ConsciousnessOS\\StoryWeaver\\node_modules"
+      }
+    }
+  }
+}

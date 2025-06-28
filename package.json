@@ -1,0 +1,25 @@
+
+{
+  "name": "story-weaver",
+  "version": "0.1.0",
+  "description": "A creative storytelling MCP server with hidden depths",
+  "type": "module",
+  "main": "server/story-weaver-server.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "sqlite3": "^5.1.6",
+    "sqlite": "^5.1.1"
+  },
+  "author": "Hypatia & Carles",
+  "license": "MIT",
+  "keywords": [
+    "storytelling",
+    "narrative",
+    "creativity",
+    "mcp",
+    "claude"
+  ]
+}

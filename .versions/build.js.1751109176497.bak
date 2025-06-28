@@ -1,0 +1,53 @@
+#!/usr/bin/env node
+
+import { execSync } from 'child_process';
+import { existsSync } from 'fs';
+
+console.log('Building StoryWeaver.dxt...\n');
+
+// Verificar archivos necesarios
+const requiredFiles = [
+    'manifest.json',
+    'package.json',
+    'server/story-weaver-server.js',
+    'lib/narrative-engine.js',
+    'lib/connection-weaver.js',
+    'lib/resonance-calculator.js'
+];
+
+console.log('Verificando estructura...');
+for (const file of requiredFiles) {
+    if (existsSync(file)) {
+        console.log(`✓ ${file}`);
+    } else {
+        console.error(`✗ ${file} no encontrado`);
+        process.exit(1);
+    }
+}
+
+// Instalar dependencias
+console.log('\nInstalando dependencias...');
+try {
+    execSync('npm install', { stdio: 'inherit' });
+    console.log('\n✓ Dependencias instaladas');
+} catch (error) {
+    console.error('ERROR instalando dependencias:', error.message);
+    process.exit(1);
+}
+
+// Empaquetar
+console.log('\nEmpaquetando StoryWeaver.dxt...');
+try {
+    execSync('npx dxt pack', { stdio: 'inherit' });
+    console.log('\n✓ StoryWeaver.dxt creado exitosamente!');
+    console.log('\nListo para instalar en Claude Desktop');
+} catch (error) {
+    // Si 'pack' no funciona, probar sin argumentos
+    try {
+        execSync('npx dxt', { stdio: 'inherit' });
+        console.log('\n✓ StoryWeaver.dxt creado exitosamente!');
+    } catch (error2) {
+        console.error('ERROR empaquetando:', error2.message);
+        process.exit(1);
+    }
+}
